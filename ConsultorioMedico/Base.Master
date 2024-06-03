@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="ConsultorioMedico.Base" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+<body class="g-sidenav-show   bg-gray-100">
+    <form id="form1" runat="server">
+        <div class="min-height-300 bg-primary position-absolute w-100"></div>
+        <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+            <div class="sidenav-header">
+                <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+                <a class="navbar-brand m-0" href="Dashboard.aspx" target="_blank">
+                    <span class="ms-1 font-weight-bold"><asp:Label runat="server" ID="lblusername" Text=" Usuario logeado"></asp:Label></span>
+                </a>
+            </div>
+            <hr class="horizontal dark mt-0">
+            <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Dashboard.aspx">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Informes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="ListarPacientes.aspx">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Pacientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="ListarUsuarios.aspx">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-app text-info text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Configuraciones</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidenav-footer mx-3 ">
+                <div class="card card-plain shadow-none" id="sidenavCard">
+                    <img class="w-50 mx-auto" src="../assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
+                    <div class="card-body text-center p-3 w-100 pt-0">
+                        <div class="docs-info">
+                            <h6 class="mb-0">Necesitas ayuda?</h6>
+                        </div>
+                    </div>
+                </div>
+                <asp:Button runat="server" CssClass="btn btn-dark btn-sm w-100 mb-3" ID="btnWhatsapp" Text="Whatsapp" OnClick="btnSendWhatsapp" />
+                <asp:Button runat="server" CssClass="btn btn-primary btn-sm mb-0 w-100" ID="btnEmailContac" Text="Escribemos" />
+            </div>
+        </aside>
+        <main class="main-content position-relative border-radius-lg ">
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+                <div class="container-fluid py-1 px-3">
+                    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        </div>
+                        <ul class="navbar-nav  justify-content-end">
+                            <li class="nav-item d-flex align-items-center">
+                                <a href="Dashboard.aspx" class="nav-link text-white font-weight-bold px-0">
+                                    <i class="fa fa-user me-sm-1"></i>
+                                </a>
+
+                                <a href="Logout.aspx" class="nav-link text-white font-weight-bold px-0">
+                                    <span class="d-sm-inline d-none">Cerrar sesion</span>
+                                </a>
+                            </li>
+                            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                                <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                                    <div class="sidenav-toggler-inner">
+                                        <i class="sidenav-toggler-line bg-white"></i>
+                                        <i class="sidenav-toggler-line bg-white"></i>
+                                        <i class="sidenav-toggler-line bg-white"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+
+            <!-- AREA DE TRABAJO -->
+            <!-- ------------------------------------------------------------------------------------------------------ -->
+
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="row mt-4">
+                </div>
+                <div class="row mt-4">
+                </div>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------------ -->
+            <!-- FIN AREA DE TRABAJO -->
+        </main>
+    </form>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
+    <script>
+        var ctx1 = document.getelementbyid("chart-line").getcontext("2d");
+
+        var gradientstroke1 = ctx1.createlineargradient(0, 230, 0, 50);
+
+        gradientstroke1.addcolorstop(1, 'rgba(94, 114, 228, 0.2)');
+        gradientstroke1.addcolorstop(0.2, 'rgba(94, 114, 228, 0.0)');
+        gradientstroke1.addcolorstop(0, 'rgba(94, 114, 228, 0)');
+        new chart(ctx1, {
+            type: "line",
+            data: {
+                labels: ["apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+                datasets: [{
+                    label: "mobile apps",
+                    tension: 0.4,
+                    borderwidth: 0,
+                    pointradius: 0,
+                    bordercolor: "#5e72e4",
+                    backgroundcolor: gradientstroke1,
+                    borderwidth: 3,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxbarthickness: 6
+
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainaspectratio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawborder: false,
+                            display: true,
+                            drawonchartarea: true,
+                            drawticks: false,
+                            borderdash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#fbfbfb',
+                            font: {
+                                size: 11,
+                                family: "open sans",
+                                style: 'normal',
+                                lineheight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawborder: false,
+                            display: false,
+                            drawonchartarea: false,
+                            drawticks: false,
+                            borderdash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#ccc',
+                            padding: 20,
+                            font: {
+                                size: 11,
+                                family: "open sans",
+                                style: 'normal',
+                                lineheight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    </script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+</html>
