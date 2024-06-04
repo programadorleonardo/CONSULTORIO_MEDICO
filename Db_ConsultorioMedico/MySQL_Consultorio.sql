@@ -1,6 +1,16 @@
 CREATE DATABASE consultoriomedico;
 USE consultoriomedico;
 
+/*TABLE - TYPE OF DOCUMENT*/
+CREATE TABLE typeiddoc (
+  idTypeIdDoc int NOT NULL AUTO_INCREMENT,
+  typeDocument varchar(45) NOT NULL,
+  typeIdDocAbrev varchar(45) DEFAULT NULL,
+  stateTypeDoc tinyint DEFAULT '1',
+  PRIMARY KEY (idTypeIdDoc),
+  KEY idx_typeDocument (typeDocument)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*VISTA - LIST TYPE OF DOCUMENTS*/
 CREATE VIEW listTypeIdentification AS 
 SELECT idTypeIdDoc,typeDocument,typeIdDocAbrev
@@ -25,6 +35,18 @@ CALL insertypeIdentification('pasoporte','pa');
 CALL insertypeIdentification('nacido vivo','nv');
 
 
+/*TABLE - HEALTH REGIME*/
+CREATE TABLE healthregimen (
+  idhealthregimen int NOT NULL AUTO_INCREMENT,
+  regime varchar(45) NOT NULL,
+  stateRegime tinyint DEFAULT '1',
+  PRIMARY KEY (idhealthregimen),
+  KEY idx_regime (regime)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
 /*VISTA - LIST HEALTH REGIME*/
 CREATE VIEW listHealthRegime AS 
 SELECT idhealthregimen,regime
@@ -43,6 +65,22 @@ END$$
 
 CALL inserthealthRegime('contributivo');
 CALL inserthealthRegime('subsidiado');
+
+/*TABLE - EPS*/
+CREATE TABLE eps (
+  ideps int NOT NULL AUTO_INCREMENT,
+  epsname varchar(250) NOT NULL,
+  epscode varchar(45) NOT NULL,
+  epscodemovie varchar(45) DEFAULT NULL,
+  epsnit varchar(45) NOT NULL,
+  epsregime int DEFAULT NULL,
+  stateeps tinyint DEFAULT '1',
+  PRIMARY KEY (ideps),
+  KEY idx_eps (epsnit,epsname,epsregime,epscode),
+  KEY fk_regimen_idx (epsregime),
+  CONSTRAINT fk_regimen FOREIGN KEY (epsregime) REFERENCES healthregimen (idhealthregimen)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
 /*VISTA - LIST EPS*/
