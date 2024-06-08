@@ -1,6 +1,31 @@
 CREATE DATABASE consultoriomedico;
 USE consultoriomedico;
 
+/*TABLE - PERMISSION*/
+CREATE TABLE permission (
+  idPermission INT NOT NULL AUTO_INCREMENT,
+  permissionType VARCHAR(45) NOT NULL,
+  statePermission TINYINT NULL DEFAULT 1,
+  PRIMARY KEY (idPermission),
+  INDEX idx_permission (permissionType ASC) VISIBLE);
+  
+  /*TABLE - USER OF SYSTEM*/
+  CREATE TABLE usersystem (
+  idUserSystem INT NOT NULL,
+  nameUser VARCHAR(45) NOT NULL,
+  passwordUser VARCHAR(45) NOT NULL,
+  fkPermission INT NULL,
+  stateUserSystem TINYINT NULL DEFAULT 1,
+  PRIMARY KEY (idUserSystem),
+  UNIQUE INDEX nameUser_UNIQUE (nameUser ASC) VISIBLE,
+  INDEX idx_userSystem (nameUser ASC) VISIBLE,
+  INDEX fk_permission_idx (fkPermission ASC) VISIBLE,
+  CONSTRAINT fk_permission
+    FOREIGN KEY (fkPermission)
+    REFERENCES permission (idPermission)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
 /*TABLE - TYPE OF DOCUMENT*/
 CREATE TABLE typeiddoc (
   idTypeIdDoc int NOT NULL AUTO_INCREMENT,
@@ -34,7 +59,6 @@ CALL insertypeIdentification('registro civil','rc');
 CALL insertypeIdentification('pasoporte','pa');
 CALL insertypeIdentification('nacido vivo','nv');
 
-
 /*TABLE - HEALTH REGIME*/
 CREATE TABLE healthregimen (
   idhealthregimen int NOT NULL AUTO_INCREMENT,
@@ -43,9 +67,6 @@ CREATE TABLE healthregimen (
   PRIMARY KEY (idhealthregimen),
   KEY idx_regime (regime)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
-
 
 /*VISTA - LIST HEALTH REGIME*/
 CREATE VIEW listHealthRegime AS 
@@ -131,6 +152,40 @@ CALL insertEPS('ANAS WAYUU EPSI','EPSI04','EPSIC4','839000495',2);
 CALL insertEPS('MALLAMAS EPSI','EPSI05','EPSIC5','837000084',2);
 CALL insertEPS('PIJAOS SALUD EPSI','EPSI06','EPSIC6','809008362',2);
 CALL insertEPS('SALUD BÓLIVAR EPS SAS','EPS047','EPSS47','901438242',1);
+
+CREATE TABLE patient (
+  idPatient int NOT NULL AUTO_INCREMENT,
+  namePatient varchar(250) NOT NULL,
+  idNumberPatiend varchar(45) NOT NULL,
+  fkeps int NOT NULL,
+  stateeps tinyint DEFAULT '1',
+  PRIMARY KEY (idPatient),
+  KEY idx_patient (idNumberPatiend,namePatient),
+  CONSTRAINT fk_eps FOREIGN KEY (fkeps) REFERENCES eps (ideps)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE patientstudy (
+  idPatientStudy INT NOT NULL AUTO_INCREMENT,
+  namePatient VARCHAR(500) NULL,
+  identification VARCHAR(45) NOT NULL,
+  dateStudy DATE NOT NULL,
+  rutePdfStudy VARCHAR(500) NULL,
+  operatorStudy VARCHAR(500) NULL,
+  typeStudy VARCHAR(45) NULL,
+  stateStudy INT NULL,
+  statePatientStudy TINYINT NULL DEFAULT 1,
+  fkPatient INT NULL,
+  PRIMARY KEY (idPatientStudy),
+  INDEX idx_patiendStudy (dateStudy ASC, identification ASC, typeStudy ASC, stateStudy ASC) VISIBLE,
+  INDEX fk_patient_idx (fkPatient ASC) VISIBLE,
+  CONSTRAINT fk_patient
+    FOREIGN KEY (fkPatient)
+    REFERENCES patient (idPatient)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
 
 
 
