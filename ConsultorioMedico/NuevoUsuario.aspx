@@ -59,18 +59,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Rol</label>
-                                    <asp:DropDownList runat="server" CssClass="form-control" ID="txtRolUser">
-                                        <asp:ListItem Value="-1">- Seleccionar -</asp:ListItem>
-                                        <asp:ListItem Value="1">Administrador</asp:ListItem>
-                                        <asp:ListItem Value="2">Medico</asp:ListItem>
-                                        <asp:ListItem Value="3">Asistente</asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:DropDownList runat="server" CssClass="form-control" ID="txtRolUser" AutoPostBack="false"></asp:DropDownList>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <br />
-                                 <asp:Button runat="server" Width="100%" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" />
+                                 <asp:Button runat="server" Width="100%" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" OnClick="btnSaveUser_Click" />
                             </div>
 
                         </div>

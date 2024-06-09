@@ -33,10 +33,13 @@
                                     <h4 class="font-weight-bolder">Bienvenido!</h4>
                                     <p class="mb-0">Ingresa tu usuario y contraseña para iniciar sesion.</p>
                                 </div>
+                                <div class="card-header pb-0 text-start">
+                                    <asp:Label runat="server" ID="lblMessageBox" Text="" ForeColor="Red"></asp:Label>
+                                </div>
                                 <div class="card-body">
                                     <form runat="server" role="form">
                                         <div class="mb-3">
-                                            <asp:TextBox runat="server" ID="txtUser" TextMode="Email" CssClass="form-control form-control-lg" placeholder="Usuario"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtUser" TextMode="SingleLine" CssClass="form-control form-control-lg" placeholder="Usuario"></asp:TextBox>
                                         </div>
                                         <div class="mb-3">
                                             <asp:TextBox runat="server" ID="txtPass" TextMode="Password" CssClass="form-control form-control-lg" placeholder="Contraseña"></asp:TextBox>

@@ -11,15 +11,15 @@ namespace ConsultorioMedico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          if (!IsPostBack)
+            if (!IsPostBack)
             {
-                if (Session["usuarioLogeado"] == null)
+                if (Session["usuario"] == null)
                 {
                     Response.Redirect("Login.aspx");
                 }
                 else
                 {
-                    lblusername.Text = Session["usuarioLogeado"].ToString();
+                    lblusername.Text = Session["usuario"].ToString();
                 }
             }
         }
