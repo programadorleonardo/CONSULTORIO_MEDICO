@@ -22,14 +22,16 @@
                         <ContentTemplate>
                             <asp:GridView ID="GridViewDataUser" runat="server" AutoGenerateColumns="False" CssClass="table align-items-center mb-0">
                                 <Columns>
-                                    <asp:BoundField HeaderText="Nombre de usuario" DataField="epsnit" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" >
+                                    <asp:HyperLinkField HeaderText="Nombre de usuario" DataNavigateUrlFields="idUserSystem" DataNavigateUrlFormatString="~/Usuario.aspx?id={0}" DataTextField="username" ItemStyle-CssClass="text-xs text-secondary mb-0" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"  />
+                                    <asp:BoundField HeaderText="Nombre de usuario" DataField="username" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" Visible="false" >
                                     <HeaderStyle CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" />
                                     <ItemStyle CssClass="text-xs text-secondary mb-0" />
                                     </asp:BoundField>
-                                    <asp:BoundField HeaderText="Estado" DataField="epsregime" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" >
+                                    <asp:BoundField HeaderText="Rol" DataField="permissionType" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" >
                                     <HeaderStyle CssClass="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" />
                                     <ItemStyle CssClass="text-center text-xs text-secondary mb-0" />
                                     </asp:BoundField>
+                                   
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>

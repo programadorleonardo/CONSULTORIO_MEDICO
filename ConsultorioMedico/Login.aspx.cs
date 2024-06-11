@@ -1,22 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace ConsultorioMedico
 {
     public partial class Login : System.Web.UI.Page
     {
-        string userDefault = "lebab@hotmail.com";
-        string passDefault = "123456789";
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Contents.Clear();
@@ -26,27 +18,23 @@ namespace ConsultorioMedico
         {
             using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "loginUserSystem";
-                cmd.Parameters.AddWithValue("@userPerson", txtUser.Text.ToLower().Trim());
-                cmd.Parameters.AddWithValue("@pass", EncrypterPassword(txtPass.Text));
-                cmd.Connection = conexion;
+                string query = "SELECT * FROM login WHERE usuario='" + txtUser.Text.ToLower().Trim() + "' AND idPublic='" + EncrypterPassword(txtPass.Text) + "';";
+                MySqlCommand cmd = new MySqlCommand(query,conexion);
                 conexion.Open();
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        Session["usuario"] = dr.GetString(0);
-                        Session["rol"] = dr.GetString(1);
+                        Session["rolUsuario"] = dr["permissionType"].ToString();
+                        Session["nameUsuario"]= dr["usuario"].ToString();
                     }
                 }
 
 
             }
 
-            if (Session["usuario"] == null)
+            if (Session["nameUsuario"] == null)
             {
                 lblMessageBox.Visible = true;
                 lblMessageBox.Text = "Usuario o contraseña equivocada";

@@ -19,7 +19,12 @@ namespace ConsultorioMedico
         {
             using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
-                string query = "SELECT * FROM listpermission;";
+                string query = "SELECT * FROM listpermissionAdmin;";
+                int permiso =Convert.ToInt32(Session["rolUsuario"].ToString());
+                if (permiso == 1)
+                {
+                    query = "SELECT * FROM listpermission";
+                }
                 conexion.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

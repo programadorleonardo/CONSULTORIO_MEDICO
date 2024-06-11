@@ -13,13 +13,42 @@ namespace ConsultorioMedico
         {
             if (!IsPostBack)
             {
-                if (Session["usuario"] == null)
+                labelInformes.Visible = false;
+                labelUsuarios.Visible = false;
+                labelConfig.Visible = false;
+                labelPacientes.Visible = false;
+                if (Session["nameUsuario"] == null)
                 {
                     Response.Redirect("Login.aspx");
                 }
                 else
                 {
-                    lblusername.Text = Session["usuario"].ToString();
+                    lblusername.Text = Session["nameUsuario"].ToString();
+                }
+
+                if (Session["rolUsuario"].Equals("superusuario"))
+                {
+                    labelInformes.Visible = true;
+                    labelUsuarios.Visible = true;
+                    labelConfig.Visible = true;
+                    labelPacientes.Visible = true;
+                }
+                if (Session["rolUsuario"].Equals("administrador"))
+                {
+                    labelInformes.Visible = true;
+                    labelUsuarios.Visible = true;
+                    labelConfig.Visible = true;
+                    labelPacientes.Visible = true;
+                }
+                if (Session["rolUsuario"].Equals("medico"))
+                {
+                    labelInformes.Visible = true;
+                    labelPacientes.Visible = true;
+                }
+                if (Session["rolUsuario"].Equals("asistente"))
+                {
+                    labelInformes.Visible = true;
+                    labelUsuarios.Visible = true;
                 }
             }
         }

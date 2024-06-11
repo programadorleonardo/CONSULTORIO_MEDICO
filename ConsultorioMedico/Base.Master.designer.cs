@@ -51,6 +51,42 @@ namespace ConsultorioMedico
         protected global::System.Web.UI.WebControls.Label lblusername;
 
         /// <summary>
+        /// Control labelInformes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelInformes;
+
+        /// <summary>
+        /// Control labelPacientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelPacientes;
+
+        /// <summary>
+        /// Control labelUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelUsuarios;
+
+        /// <summary>
+        /// Control labelConfig.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelConfig;
+
+        /// <summary>
         /// Control btnWhatsapp.
         /// </summary>
         /// <remarks>

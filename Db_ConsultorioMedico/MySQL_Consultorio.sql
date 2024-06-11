@@ -24,6 +24,16 @@ ORDER BY permissionType;
 /*============================================================================================*/
 SELECT * FROM listPermission;
 /*============================================================================================*/
+/*============================================================================================*/
+/*VIEW - LIST PERMISSIONS*/
+CREATE VIEW listPermissionAdmin AS
+SELECT idPermission, permissionType
+FROM permission
+WHERE statePermission=1 AND idPermission>2
+ORDER BY permissionType;
+/*============================================================================================*/
+SELECT * FROM listPermissionAdmin;
+/*============================================================================================*/
 /*SP - INSERT PERMISSION*/
 DELIMITER $$
 CREATE PROCEDURE insertPermission(IN permissionName varchar(45))
@@ -59,7 +69,7 @@ END$$
 /*============================================================================================*/
 /*TABLE - USER OF SYSTEM*/
 CREATE TABLE usersystem (
-idUserSystem INT NOT NULL,
+idUserSystem INT  AUTO_INCREMENT NOT NULL,
 namesUser VARCHAR(45) NOT NULL,
 lastNamesUser VARCHAR(45) NOT NULL,
 username VARCHAR(50) NOT NULL,
@@ -86,16 +96,14 @@ INNER JOIN permission ON usersystem.fkPermission=permission.idPermission
 WHERE stateUserSystem=1
 ORDER BY username;
 /*============================================================================================*/
-SELECT * FROM listUserSystem;
+SELECT * FROM listUserSystem
 /*============================================================================================*/
-/*SP LOGIN - USER OF SYSTEM*/
-DELIMITER $$
-CREATE PROCEDURE loginUserSystem(IN userPerson varchar(50),pass varchar(500))
-BEGIN 
-SELECT consultoriomedico.usersystem(username,permissionType) FROM usersystem
+/*VIEW - LOGIN - USER OF SYSTEM*/
+CREATE VIEW login AS
+SELECT username AS usuario,permissionType,passwordUser AS idPublic
+FROM usersystem
 INNER JOIN permission ON usersystem.fkPermission=permission.idPermission
-WHERE username=userPerson AND passwordUser=pass AND stateUserSystem=1; 
-END$$
+WHERE stateUserSystem=1
 /*============================================================================================*/
 /*SP - INSERT USER OF SYSTEM*/
 DELIMITER $$
@@ -135,7 +143,7 @@ CREATE TABLE typeiddoc (
   stateTypeDoc tinyint DEFAULT '1',
   PRIMARY KEY (idTypeIdDoc),
   KEY idx_typeDocument (typeDocument)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*============================================================================================*/
 /*VISTA - LIST TYPE OF DOCUMENTS*/
 CREATE VIEW listTypeIdentification AS 
@@ -189,7 +197,7 @@ regime varchar(45) NOT NULL,
 stateRegime tinyint DEFAULT '1',
 PRIMARY KEY (idhealthregimen),
 KEY idx_regime (regime)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*============================================================================================*/
 /*VISTA - LIST HEALTH REGIME*/
 CREATE VIEW listHealthRegime AS 
@@ -243,7 +251,7 @@ PRIMARY KEY (ideps),
 KEY idx_eps (epsnit,epsname,epsregime,epscode),
 KEY fk_regimen_idx (epsregime),
 CONSTRAINT fk_regimen FOREIGN KEY (epsregime) REFERENCES healthregimen (idhealthregimen)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*============================================================================================*/
 /*VISTA - LIST EPS*/
 CREATE VIEW listEPS AS 
