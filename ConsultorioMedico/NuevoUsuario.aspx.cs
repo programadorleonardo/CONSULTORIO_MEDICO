@@ -19,7 +19,12 @@ namespace ConsultorioMedico
         {
             using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
-                string query = "SELECT * FROM listpermission;";
+                string query = "SELECT * FROM listpermissionAdmin;";
+                string permiso =Session["rolUsuario"].ToString();
+                if (permiso == "superadministrador")
+                {
+                    query = "SELECT * FROM listpermission";
+                }
                 conexion.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -75,6 +80,7 @@ namespace ConsultorioMedico
                 cmd.Connection = conexion;
                 conexion.Open();
                 cmd.ExecuteNonQuery();
+                Response.Redirect("ListarUsuarios.aspx");
             }
         }
     }

@@ -20,10 +20,11 @@ namespace ConsultorioMedico
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]{
-                new DataColumn("epsnit",typeof(string)),
-                new DataColumn("epsregime",typeof(int)),
+                new DataColumn("idUserSystem",typeof(int)),
+                new DataColumn("username",typeof(string)),
+                new DataColumn("permissionType",typeof(string)),
                 });
-            string query = "SELECT epsnit,epsregime FROM consultoriomedico.eps";
+            string query = "SELECT * FROM listUserSystem";
             using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
 
@@ -35,14 +36,12 @@ namespace ConsultorioMedico
                     while (dr.Read())
                     {
                         dt.Rows.Add(
-                            dr["epsnit"].ToString(),
-                            Convert.ToInt32(dr["epsregime"])
-                            );
-                        if (Convert.ToInt32(dr["epsregime"]) == 1){
-                            GridViewDataUser.SelectedRowStyle.CssClass = "bg-gradient-danger";
-                        }
-                        
+                            Convert.ToInt32(dr["idUserSystem"]),
+                            dr["username"].ToString(),
+                            dr["permissionType"].ToString()
+                            );                        
                     }
+                    dr.Close();
                 }
             }
             GridViewDataUser.DataSource = dt;
