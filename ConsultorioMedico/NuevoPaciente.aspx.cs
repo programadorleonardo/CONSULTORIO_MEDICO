@@ -1,7 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X500;
 using System;
 using System.Configuration;
 using System.Data;
+using System.IO;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace ConsultorioMedico
@@ -46,6 +49,55 @@ namespace ConsultorioMedico
                 txtEPS.DataValueField = "ideps";
                 txtEPS.DataBind();
                 txtEPS.Items.Insert(0, new ListItem("- Selecionar -", "0"));
+            }
+        }
+
+        protected void btnSavePatient_Click(object sender, EventArgs e)
+        {
+            string rutePdf = Server.MapPath("~/PDF");
+            if (!Directory.Exists(rutePdf))
+            {
+                Directory.CreateDirectory(rutePdf);
+            }
+            try
+            {
+                if (FileUploadPDF.HasFile)
+                {
+                    //Verificamos las extension del archivo
+                    string ext = Path.GetExtension(FileUploadPDF.FileName);
+                    ext = ext.Substring(ext.LastIndexOf(".")+1).ToLower();
+                    string[] formatos = new string[] { "pdf" };
+                    if (Array.IndexOf(formatos, ext) < 0)
+                    {
+                        Response.Write("Formato de iamgen invalido");
+                    }
+                    else
+                    {
+                        GuardarArchivo(FileUploadPDF.PostedFile);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            Response.Redirect("ListarPacientes");
+        }
+        private void GuardarArchivo(HttpPostedFile file)
+        {
+            string rutePdf = Server.MapPath("~/PDF");
+            if (!Directory.Exists(rutePdf))
+            {
+                Directory.CreateDirectory(rutePdf);
+            }
+            string archivo = String.Format("{0}\\{1}",rutePdf,file.FileName);
+            if (File.Exists(archivo))
+            {
+                Response.Write(String.Format("Ya existe un archivo con nombre\"{0}\".",file.FileName));
+            }
+            else
+            {
+                file.SaveAs(archivo);
             }
         }
     }

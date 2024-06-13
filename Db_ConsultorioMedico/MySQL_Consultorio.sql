@@ -458,6 +458,7 @@ END$$
 /*============================================================================================*/
 CREATE TABLE patientstudy (
 idPatientStudy INT NOT NULL AUTO_INCREMENT,
+idStudy VARCHAR(45) NOT NULL,
 namePatient VARCHAR(500),
 identification VARCHAR(45) NOT NULL,
 dateOfBirth DATE,
@@ -468,9 +469,9 @@ operatorStudy VARCHAR(500),
 typeStudy VARCHAR(45),
 fkStateStudy INT,
 statePatientStudy TINYINT NULL DEFAULT 1,
-fkPatient INT NOT NULL,
+fkPatient INT,
 PRIMARY KEY (idPatientStudy),
-INDEX idx_patiendStudy (dateStudy ASC, identification ASC, typeStudy ASC, stateStudy ASC) VISIBLE,
+INDEX idx_patiendStudy (dateStudy ASC, identification ASC, typeStudy ASC, fkStateStudy ASC) VISIBLE,
 INDEX fk_patient_idx (fkPatient ASC) VISIBLE,
 CONSTRAINT fk_patient FOREIGN KEY (fkPatient) REFERENCES patient (idPatient),
 CONSTRAINT fk_statestudy FOREIGN KEY (fkStateStudy) REFERENCES patient (idPatient)

@@ -27,7 +27,7 @@ namespace ConsultorioMedico
                     while (dr.Read())
                     {
                         Session["rolUsuario"] = dr["permissionType"].ToString();
-                        Session["nameUsuario"]= dr["usuario"].ToString();
+                        Session["nameUsuario"]= dr["usuario"].ToString().ToUpper();
                     }
                 }
 

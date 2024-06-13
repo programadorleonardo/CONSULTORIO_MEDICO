@@ -4,154 +4,54 @@
     <title>Pacientes</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-12">
-        <div class="card mb-4">
 
-            <div class="card-header pb-0">
+    <div class="card shadow-lg mx-0">
+        <div class="card-body p-3">
+            <div class="row gx-4">
                 <div class="col-12">
-                    <asp:TextBox runat="server" CssClass="form-control" ID="txtBuscarUsuario" placeholder="Buscar paciente..."></asp:TextBox>
+                    <div class="h-100">
+                        <asp:Button runat="server" Width="100%" CssClass="btn btn-dark" Text="Actualizar pacientes" ID="btnUpdateStudyPatientList" OnClick="btnUpdateStudyPatientList_Click" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="h-100">
+                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Buscar paciente..."></asp:TextBox>
+                    </div>
                 </div>
             </div>
-
-
 
             <%--COMIEZA LA TABLA--%>
+            <br />
             <div class="card-body px-0 pt-0 pb-2">
                 <div class="table-responsive p-0">
-                    <table class="table align-items-center mb-0">
-                        <thead>
-                            <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del paciente</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Identificacion</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Medico</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">
-                                        <asp:Label runat="server" Text="En consulta"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="En espera"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="En espera"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="En espera"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="En espera"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo del paciente" FontBold="True"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="# Identificacion" FontBold="True"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="En espera"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                        <ContentTemplate>
+                            <asp:GridView ID="GridViewDataPatientStudy" runat="server" AutoGenerateColumns="False" CssClass="table align-items-center mb-0">
+                                <Columns>
+                                    <asp:HyperLinkField HeaderText="Paciente" DataNavigateUrlFields="idPatientStudy" DataNavigateUrlFormatString="~/Paciente.aspx?id={0}" DataTextField="namePatient" ItemStyle-CssClass="text-xs text-secondary mb-0" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" />
+                                    <asp:BoundField HeaderText="Paciente" DataField="namePatient" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" Visible="false">
+                                        <HeaderStyle CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" />
+                                        <ItemStyle CssClass="text-xs text-secondary mb-0" />
+                                    </asp:BoundField>
+                                    <asp:BoundField HeaderText="Identificacion" DataField="identification" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <HeaderStyle CssClass="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" />
+                                        <ItemStyle CssClass="text-center text-xs text-secondary mb-0" />
+                                    </asp:BoundField>
+                                    <asp:BoundField HeaderText="Fecha del estudio" DataField="dateStudy" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <HeaderStyle CssClass="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" />
+                                        <ItemStyle CssClass="text-center text-xs text-secondary mb-0" />
+                                    </asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
+            <%--FIN DE LA TABLA--%>
         </div>
     </div>
+    </div>
+
+
 </asp:Content>

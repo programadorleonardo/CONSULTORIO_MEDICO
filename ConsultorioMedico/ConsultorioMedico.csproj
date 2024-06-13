@@ -236,6 +236,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="NuevoPaciente.aspx" />
     <Content Include="NuevoUsuario.aspx" />
+    <Content Include="Paciente.aspx" />
     <Content Include="pages\static\img\fondoLogin.jpg" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="NuevoUsuario.aspx.designer.cs">
       <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente.aspx.cs">
+      <DependentUpon>Paciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente.aspx.designer.cs">
+      <DependentUpon>Paciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.aspx.cs">
@@ -494,12 +502,16 @@
     <Content Include="assets\scss\argon-dashboard\_variables.scss" />
     <Content Include="Base.Master" />
     <None Include="packages.config" />
+    <Content Include="PDF\CV_2024_PROGRAMADOR DE SOFTWARE.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,80 +11,98 @@ namespace ConsultorioMedico
 {
 
 
-    public partial class NuevoPaciente
+    public partial class Paciente
     {
 
         /// <summary>
-        /// Control txtPrimerNombrePaciente.
+        /// Control lblNombreCompleto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrimerNombrePaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblNombreCompleto;
 
         /// <summary>
-        /// Control txtSegundoNombrePaciente.
+        /// Control txtTypeIdPatient.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSegundoNombrePaciente;
+        protected global::System.Web.UI.WebControls.DropDownList txtTypeIdPatient;
 
         /// <summary>
-        /// Control txtPrimerApellidoPaciente.
+        /// Control lblIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrimerApellidoPaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblIdentificacion;
 
         /// <summary>
-        /// Control txtSegundoApellidoPaciente.
+        /// Control lblDateStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSegundoApellidoPaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblDateStudy;
 
         /// <summary>
-        /// Control txtNumIdPaciente.
+        /// Control lblNameStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumIdPaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblNameStudy;
 
         /// <summary>
-        /// Control txtTipoIdPaciente.
+        /// Control lblTypeStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtTipoIdPaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblTypeStudy;
 
         /// <summary>
-        /// Control txtRegimenPaciente.
+        /// Control lblStateStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtRegimenPaciente;
+        protected global::System.Web.UI.WebControls.TextBox lblStateStudy;
 
         /// <summary>
-        /// Control txtEPS.
+        /// Control lblOperatorStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtEPS;
+        protected global::System.Web.UI.WebControls.TextBox lblOperatorStudy;
+
+        /// <summary>
+        /// Control txtRegimenPatient.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList txtRegimenPatient;
+
+        /// <summary>
+        /// Control txtEpsPatient.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList txtEpsPatient;
 
         /// <summary>
         /// Control FileUploadPDF.
@@ -96,12 +114,21 @@ namespace ConsultorioMedico
         protected global::System.Web.UI.WebControls.FileUpload FileUploadPDF;
 
         /// <summary>
-        /// Control btnSavePatient.
+        /// Control btnViewPDF.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSavePatient;
+        protected global::System.Web.UI.WebControls.Button btnViewPDF;
+
+        /// <summary>
+        /// Control btnUpdateData.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateData;
     }
 }

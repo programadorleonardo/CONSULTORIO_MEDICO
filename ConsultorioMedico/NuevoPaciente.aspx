@@ -68,41 +68,29 @@
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Regimen</label>
                                     <asp:DropDownList runat="server" CssClass="form-control" ID="txtRegimenPaciente">
-                                        <asp:ListItem Value="-1">- Seleccionar -</asp:ListItem>
-                                        <asp:ListItem Value="1">Contributivo</asp:ListItem>
-                                        <asp:ListItem Value="2">Subsidiado</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </div>
                             <%--EPS--%>
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Empresa Promotara de Salud - EPS</label>
                                     <asp:DropDownList runat="server" CssClass="form-control" ID="txtEPS">
-                                        <asp:ListItem Value="-1">- Seleccionar -</asp:ListItem>
-                                        <asp:ListItem>ALIANSALUD ENTIDAD PROMOTORA DE SALUD S.A.</asp:ListItem>
-                                        <asp:ListItem>ANASWAYUU</asp:ListItem>
-                                        <asp:ListItem>ASOCIACIÓN INDÍGENA DEL CAUCA</asp:ListItem>
-                                        <asp:ListItem>ASOCIACION MUTUAL SER EMPRESA SOLIDARIA DE SALUD EPS</asp:ListItem>
-                                        <asp:ListItem>COMPENSAR E.P.S.</asp:ListItem>
-                                        <asp:ListItem>COOPERATIVA DE SALUD Y DESARROLLO INTEGRAL ZONA SUR ORIENTAL DE CARTAGENA</asp:ListItem>
-                                        <asp:ListItem>E.P.S. FAMISANAR LTDA.</asp:ListItem>
-                                        <asp:ListItem>E.P.S. SANITAS S.A.</asp:ListItem>
-                                        <asp:ListItem>EPS SERVICIO OCCIDENTAL DE SALUD S.A.</asp:ListItem>
-                                        <asp:ListItem>EPS Y MEDICINA PREPAGADA SURAMERICANA S.A</asp:ListItem>
-                                        <asp:ListItem>FUNDACIÓN SALUD MIA EPS</asp:ListItem>
-                                        <asp:ListItem>NUEVA EPS S.A.</asp:ListItem>
-                                        <asp:ListItem>SALUD TOTAL S.A. E.P.S.</asp:ListItem>
-                                        <asp:ListItem>SALUDVIDA S.A. E.P.S</asp:ListItem>
-                                        <asp:ListItem>SAVIA SALUD EPS</asp:ListItem>
                                     </asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Anexar estudio</label>
+                                    <asp:FileUpload runat="server" CssClass="form-control" ID="FileUploadPDF" />
                                 </div>
                             </div>
 
                             <%--GUARDAR--%>
                             <div class="col-md-12">
                                 <br />
-                                <asp:Button runat="server" Width="100%" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" />
+                                <asp:Button runat="server" Width="100%" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSavePatient" Text="Guardar" OnClick="btnSavePatient_Click" />
                             </div>
 
                         </div>
