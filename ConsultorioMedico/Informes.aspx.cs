@@ -1,11 +1,8 @@
-﻿using MySql.Data.MySqlClient;
-using Mysqlx.Resultset;
-using MySqlX.XDevAPI;
+﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,18 +10,23 @@ using System.Web.UI.WebControls;
 
 namespace ConsultorioMedico
 {
-    public partial class ListarUsuarios : System.Web.UI.Page
+    public partial class Informes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnInformDate_Click(object sender, EventArgs e)
+        {
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]{
-                new DataColumn("idUserSystem",typeof(int)),
-                new DataColumn("username",typeof(string)),
-                new DataColumn("permissionType",typeof(string)),
+                new DataColumn("idPatientStudy",typeof(int)),
+                new DataColumn("namePatient",typeof(string)),
+                new DataColumn("identification",typeof(string)),
+                new DataColumn("dateStudy",typeof(string)),
                 });
-            string query = "SELECT * FROM listUserSystem";
+            string query = "SELECT * FROM patientstudy WHERE dateStudy>='"+txtDateBegin.Text+ "' AND dateStudy<='"+txtDateEnd.Text+"'";
             using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
                 conexion.Open();
@@ -35,21 +37,17 @@ namespace ConsultorioMedico
                     while (dr.Read())
                     {
                         dt.Rows.Add(
-                            Convert.ToInt32(dr["idUserSystem"]),
-                            dr["username"].ToString().ToUpper(),
-                            dr["permissionType"].ToString().ToUpper()
+                            Convert.ToInt32(dr["idPatientStudy"]),
+                            dr["namePatient"].ToString(),
+                            dr["identification"].ToString(),
+                            dr["dateStudy"].ToString()
                             );
                     }
                     dr.Close();
                 }
             }
-            GridViewDataUserSystem.DataSource = dt;
-            GridViewDataUserSystem.DataBind();
-        }
-
-        protected void btnAddUserSystem_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("NuevoUsuario.aspx");
+            GridViewDataPatientStudy.DataSource = dt;
+            GridViewDataPatientStudy.DataBind();
         }
     }
 }

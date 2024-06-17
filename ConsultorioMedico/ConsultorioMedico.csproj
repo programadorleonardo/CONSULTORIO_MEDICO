@@ -229,6 +229,7 @@
     <Content Include="assets\js\plugins\perfect-scrollbar.min.js" />
     <Content Include="assets\js\plugins\smooth-scrollbar.min.js" />
     <Content Include="ConsultaPaciente.aspx" />
+    <Content Include="Informes.aspx" />
     <Content Include="ListarPacientes.aspx" />
     <Content Include="ListarUsuarios.aspx" />
     <Content Include="Login.aspx" />
@@ -238,7 +239,9 @@
     <Content Include="NuevoUsuario.aspx" />
     <Content Include="Paciente.aspx" />
     <Content Include="pages\static\img\fondoLogin.jpg" />
+    <Content Include="PDF_Document.html" />
     <Content Include="Usuario.aspx" />
+    <Content Include="ViewPDF.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +258,13 @@
     </Compile>
     <Compile Include="ConsultaPaciente.aspx.designer.cs">
       <DependentUpon>ConsultaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informes.aspx.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informes.aspx.designer.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarPacientes.aspx.cs">
       <DependentUpon>ListarPacientes.aspx</DependentUpon>
@@ -319,6 +329,13 @@
     </Compile>
     <Compile Include="Usuario.aspx.designer.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPDF.aspx.cs">
+      <DependentUpon>ViewPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPDF.aspx.designer.cs">
+      <DependentUpon>ViewPDF.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -502,7 +519,11 @@
     <Content Include="assets\scss\argon-dashboard\_variables.scss" />
     <Content Include="Base.Master" />
     <None Include="packages.config" />
-    <Content Include="PDF\CV_2024_PROGRAMADOR DE SOFTWARE.pdf" />
+    <Content Include="PDF\ESTUDIO_DEL_PACIENTE_1.pdf" />
+    <Content Include="PDF\ESTUDIO_DEL_PACIENTE_2.pdf" />
+    <Content Include="PDF\ESTUDIO_DEL_PACIENTE_3.pdf" />
+    <Content Include="PDF\ESTUDIO_DEL_PACIENTE_4.pdf" />
+    <Content Include="PDF\ESTUDIO_DEL_PACIENTE_5.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

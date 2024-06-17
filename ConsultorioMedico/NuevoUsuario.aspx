@@ -65,7 +65,7 @@
 
                             <div class="col-md-12">
                                 <br />
-                                 <asp:Button runat="server" Width="100%" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" OnClick="btnSaveUser_Click" />
+                                 <asp:Button runat="server" Width="100%" CssClass="btn btn-dark btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" OnClick="btnSaveUser_Click" />
                             </div>
 
                         </div>

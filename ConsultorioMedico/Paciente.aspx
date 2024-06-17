@@ -38,21 +38,21 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Estudio</label>
-                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="SingleLine" ID="lblNameStudy"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="SingleLine" ID="lblNameStudy" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Tipo de estudio</label>
-                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="SingleLine" ID="lblTypeStudy"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="SingleLine" ID="lblTypeStudy" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Estado del estudio</label>
-                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="SingleLine" ID="lblStateStudy"></asp:TextBox>
+                                    <asp:DropDownList runat="server" CssClass="form-control" ID="lblStateStudy" AutoPostBack="false"></asp:DropDownList>
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label"></label>
-                                    <asp:Button ID="btnViewPDF" CssClass="form-control btn btn-dark" runat="server" Text="Ver PDF"></asp:Button>
+                                    <asp:Button ID="btnViewPDF" CssClass="form-control btn btn-dark" runat="server" Text="Ver PDF" PostBackUrl="~/ViewPDF.aspx"></asp:Button>
                                     <asp:Button ID="btnUpdateData" CssClass="form-control btn btn-success" runat="server" Text="Actualizar" OnClick="btnUpdateData_Click"></asp:Button>
                                 </div>
                             </div>

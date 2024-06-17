@@ -11,17 +11,35 @@ namespace ConsultorioMedico
 {
 
 
-    public partial class ListarUsuarios
+    public partial class Informes
     {
 
         /// <summary>
-        /// Control btnAddUserSystem.
+        /// Control txtDateBegin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddUserSystem;
+        protected global::System.Web.UI.WebControls.TextBox txtDateBegin;
+
+        /// <summary>
+        /// Control txtDateEnd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateEnd;
+
+        /// <summary>
+        /// Control btnInformDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInformDate;
 
         /// <summary>
         /// Control ScriptManager1.
@@ -42,12 +60,12 @@ namespace ConsultorioMedico
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// Control GridViewDataUserSystem.
+        /// Control GridViewDataPatientStudy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDataUserSystem;
+        protected global::System.Web.UI.WebControls.GridView GridViewDataPatientStudy;
     }
 }

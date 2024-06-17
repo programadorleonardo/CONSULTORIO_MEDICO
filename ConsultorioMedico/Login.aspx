@@ -45,15 +45,15 @@
                                             <asp:TextBox runat="server" ID="txtPass" TextMode="Password" CssClass="form-control form-control-lg" placeholder="Contraseña"></asp:TextBox>
                                         </div>
                                         <div class="text-center">
-                                            <asp:Button runat="server" CssClass="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0" Text="Iniciar sesion" OnClick="btnStartSession" />
+                                            <asp:Button runat="server" CssClass="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0" Text="Iniciar sesion" OnClick="btnStartSession" />
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-                            <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('pages/static/img/fondoLogin.jpg'); background-size: cover;">
-                                <span class="mask bg-gradient-primary opacity-6"></span>
+                            <div class="position-relative bg-gradient-dark h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('pages/static/img/fondoLogin.jpg'); background-size: cover;">
+                                <span class="mask bg-gradient-dark opacity-6"></span>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Cuida tu cuerpo, es el unico lugar sano para vivir."</h4>
                                 <p class="text-white position-relative">La salud es un estado de completa armonía del cuerpo, la mente y el espíritu. Cuando uno está libre de enfermedades físicas y distracciones mentales, las puertas del alma se abren.</p>
                             </div>

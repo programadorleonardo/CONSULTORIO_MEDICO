@@ -51,7 +51,4 @@
             <%--FIN DE LA TABLA--%>
         </div>
     </div>
-    </div>
-
-
 </asp:Content>

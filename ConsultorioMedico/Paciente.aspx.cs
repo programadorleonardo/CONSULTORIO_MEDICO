@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +16,8 @@ namespace ConsultorioMedico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnViewPDF.Enabled = false;
+            string url = "";
             int id = Convert.ToInt32(Request.QueryString["id"]);
             using (MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
             {
@@ -23,6 +26,7 @@ namespace ConsultorioMedico
                 string queryHealthRegime = "SELECT * FROM listHealthRegime";
                 string queryEPS = "SELECT * FROM listEPS";
                 string queryDataPatient = "SELECT * FROM patientstudy WHERE idPatientStudy=" + id + "";
+                string queryStatepatientstudy = "SELECT * FROM statepatientstudy";
 
                 MySqlCommand cmdTypeId = new MySqlCommand(queryTypeId, con);
                 MySqlDataAdapter daTypeId = new MySqlDataAdapter(cmdTypeId);
@@ -54,6 +58,16 @@ namespace ConsultorioMedico
                 txtEpsPatient.DataBind();
                 txtEpsPatient.Items.Insert(0, new ListItem("- Selecionar -", "0"));
 
+                MySqlCommand cmdStatepatientstudy = new MySqlCommand(queryStatepatientstudy, con);
+                MySqlDataAdapter daStatepatientstudy = new MySqlDataAdapter(cmdStatepatientstudy);
+                DataSet dsStatepatientstudy = new DataSet();
+                daStatepatientstudy.Fill(dsStatepatientstudy);
+                lblStateStudy.DataSource = dsStatepatientstudy;
+                lblStateStudy.DataTextField = "stateType";
+                lblStateStudy.DataValueField = "idStatePatientStudy";
+                lblStateStudy.DataBind();
+                lblStateStudy.Items.Insert(0, new ListItem("- Selecionar -", "0"));
+
 
                 MySqlCommand cmdDataPatient = new MySqlCommand(queryDataPatient, con);
                 MySqlDataReader dr = cmdDataPatient.ExecuteReader();
@@ -66,10 +80,17 @@ namespace ConsultorioMedico
                         lblDateStudy.Text = dr["dateStudy"].ToString().ToUpper();
                         lblNameStudy.Text = dr["nameStudy"].ToString().ToUpper();
                         lblTypeStudy.Text = dr["typeStudy"].ToString().ToUpper();
-                        lblStateStudy.Text = dr["fkStateStudy"].ToString().ToUpper();
+                        url = dr["rutePdfStudy"].ToString();
+                        btnViewPDF.PostBackUrl = "ViewPDF.aspx?url=" +url;
+
+                    }
+                    if (!String.IsNullOrEmpty(url))
+                    {
+                        btnViewPDF.Enabled = true;
                     }
                 }
             }
+
         }
 
         protected void btnUpdateData_Click(object sender, EventArgs e)
@@ -122,32 +143,25 @@ namespace ConsultorioMedico
             {
                 try
                 {
-                    if (IsPostBack == false)
+
+                    using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
                     {
-                        using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
-                        {
-                            int id = Convert.ToInt32(Request.QueryString["id"]);
-                            string query = $"UPDATE patientstudy " +
-                                $"SET nameStudy='{lblNameStudy}',  " +
-                                $"rutePdfStudy='{archivo}',  " +
-                                $"operatorStudy='{lblOperatorStudy}',  " +
-                                $"typeStudy='{lblTypeStudy}',  " +
-                                $"fkStateStudy={lblStateStudy},  " +
-                                $"WHERE idPatientStudy=" + id + ";";
-                            conexion.Open();
-                            MySqlCommand cmd = new MySqlCommand(query, conexion);
-                            cmd.ExecuteNonQuery();
-                        }
-                        file.SaveAs(archivo);
+                        int id = Convert.ToInt32(Request.QueryString["id"]);
+                        string query = $"UPDATE patientstudy SET rutePdfStudy='PDF/{file.FileName}', operatorStudy='{lblOperatorStudy.Text.ToUpper()}' WHERE idPatientStudy={id}";
+                        conexion.Open();
+                        MySqlCommand cmd = new MySqlCommand(query, conexion);
+                        cmd.ExecuteNonQuery();
                     }
+                    file.SaveAs(archivo);
+                    Thread.Sleep(300);
+                    Response.Redirect("ListarPacientes.aspx");
+
                 }
                 catch (Exception ex)
                 {
-                    Response.Redirect(ex.Message);
+
+                    Response.Write(ex.Message);
                 }
-
-
-
             }
         }
     }
