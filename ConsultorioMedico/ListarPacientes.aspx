@@ -2,6 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Pacientes</title>
+    <link href="assets/css/Buscador.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/Buscador.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -15,7 +18,7 @@
                 </div>
                 <div class="col-12">
                     <div class="h-100">
-                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Buscar paciente..."></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtBuscadorPacientes" CssClass="form-control" placeholder="Buscar paciente..."></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -51,4 +54,32 @@
             <%--FIN DE LA TABLA--%>
         </div>
     </div>
+
+
+    <%--MODAL--%>
+    <div class="modal fade" id="staticbackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdroplabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabelBody"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showModalExito(mensaje, cuerpo) {
+
+            $("#staticbackdroplabel").text(mensaje);
+            $("#staticbackdroplabelBody").text(cuerpo);
+            $("#staticbackdrop").modal("show");
+        }
+    </script>
+
 </asp:Content>

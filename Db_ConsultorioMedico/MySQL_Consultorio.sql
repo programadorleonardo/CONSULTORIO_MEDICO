@@ -458,23 +458,18 @@ END$$
 /*============================================================================================*/
 CREATE TABLE patientstudy (
 idPatientStudy INT NOT NULL AUTO_INCREMENT,
-idStudy VARCHAR(45) NOT NULL,
 namePatient VARCHAR(500),
 identification VARCHAR(45) NOT NULL,
-dateOfBirth DATE,
 dateStudy DATE NOT NULL,
-nameStudy VARCHAR(5000),
-rutePdfStudy VARCHAR(5000),
-operatorStudy VARCHAR(500),
+nameStudy VARCHAR(1000),
 typeStudy VARCHAR(45),
+rutePdfStudy VARCHAR(1000),
+operatorStudy VARCHAR(500),
 fkStateStudy INT,
 statePatientStudy TINYINT NULL DEFAULT 1,
-fkPatient INT,
 PRIMARY KEY (idPatientStudy),
-INDEX idx_patiendStudy (dateStudy ASC, identification ASC, typeStudy ASC, fkStateStudy ASC) VISIBLE,
-INDEX fk_patient_idx (fkPatient ASC) VISIBLE,
-CONSTRAINT fk_patient FOREIGN KEY (fkPatient) REFERENCES patient (idPatient),
-CONSTRAINT fk_statestudy FOREIGN KEY (fkStateStudy) REFERENCES patient (idPatient)
+INDEX idx_patiendStudy (dateStudy ASC, identification ASC,nameStudy ASC, typeStudy ASC, fkStateStudy ASC) VISIBLE,
+constraint Fk_StateStudy foreign key (fkStateStudy) references statepatientstudy(idStatePatientStudy)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 );

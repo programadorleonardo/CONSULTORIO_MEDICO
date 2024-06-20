@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\paciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\informes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\informes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\paciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\informes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\informes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\nuevopaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\nuevopaciente.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\listarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\listarpacientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\nuevousuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\nuevousuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\nuevopaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\nuevopaciente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|c:\\users\\leonardo barona\\source\\repos\\consultoriomedico\\consultoriomedico\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{79886295-3EA8-4D5A-B7DC-FB1E000F9302}|ConsultorioMedico\\ConsultorioMedico.csproj|solutionrelative:consultoriomedico\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,67 +54,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NuevoUsuario.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoUsuario.aspx.cs",
-              "RelativeDocumentMoniker": "ConsultorioMedico\\NuevoUsuario.aspx.cs",
-              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoUsuario.aspx.cs",
-              "RelativeToolTip": "ConsultorioMedico\\NuevoUsuario.aspx.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAowCkAAAANAAAA",
+              "DocumentIndex": 1,
+              "Title": "Informes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Informes.aspx.cs",
+              "RelativeDocumentMoniker": "ConsultorioMedico\\Informes.aspx.cs",
+              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Informes.aspx.cs",
+              "RelativeToolTip": "ConsultorioMedico\\Informes.aspx.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowD0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:59:07.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NuevoPaciente.aspx",
-              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoPaciente.aspx",
-              "RelativeDocumentMoniker": "ConsultorioMedico\\NuevoPaciente.aspx",
-              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoPaciente.aspx",
-              "RelativeToolTip": "ConsultorioMedico\\NuevoPaciente.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-13T20:23:58.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NuevoPaciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoPaciente.aspx.cs",
-              "RelativeDocumentMoniker": "ConsultorioMedico\\NuevoPaciente.aspx.cs",
-              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\NuevoPaciente.aspx.cs",
-              "RelativeToolTip": "ConsultorioMedico\\NuevoPaciente.aspx.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAowD4AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:22:15.76Z",
+              "WhenOpened": "2024-06-19T23:10:15.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Paciente.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Paciente.aspx.cs",
-              "RelativeDocumentMoniker": "ConsultorioMedico\\Paciente.aspx.cs",
-              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Paciente.aspx.cs",
-              "RelativeToolTip": "ConsultorioMedico\\Paciente.aspx.cs",
-              "ViewState": "AQIAAHkAAAAAAAAAAAAuwIcAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T17:53:12.776Z",
+              "Title": "Informes.aspx",
+              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Informes.aspx",
+              "RelativeDocumentMoniker": "ConsultorioMedico\\Informes.aspx",
+              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Informes.aspx",
+              "RelativeToolTip": "ConsultorioMedico\\Informes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-19T16:16:16.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Paciente.aspx",
-              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Paciente.aspx",
-              "RelativeDocumentMoniker": "ConsultorioMedico\\Paciente.aspx",
-              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Paciente.aspx",
-              "RelativeToolTip": "ConsultorioMedico\\Paciente.aspx",
+              "DocumentIndex": 2,
+              "Title": "ListarPacientes.aspx",
+              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\ListarPacientes.aspx",
+              "RelativeDocumentMoniker": "ConsultorioMedico\\ListarPacientes.aspx",
+              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\ListarPacientes.aspx",
+              "RelativeToolTip": "ConsultorioMedico\\ListarPacientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-13T17:50:35.842Z",
+              "WhenOpened": "2024-06-19T16:16:18.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Web.config",
+              "RelativeDocumentMoniker": "ConsultorioMedico\\Web.config",
+              "ToolTip": "C:\\Users\\LEONARDO BARONA\\source\\repos\\ConsultorioMedico\\ConsultorioMedico\\Web.config",
+              "RelativeToolTip": "ConsultorioMedico\\Web.config",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-06-19T20:50:35.695Z",
               "EditorCaption": ""
             }
           ]

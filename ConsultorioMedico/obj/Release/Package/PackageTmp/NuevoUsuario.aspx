@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Nuevo Usuario</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid py-4">
@@ -11,7 +12,7 @@
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center">
                             <p class="mb-0">Nuevo usuario</p>
-                            <asp:Button runat="server" CssClass="btn btn-primary btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" />
+
                         </div>
                     </div>
                     <div class="card-body">
@@ -59,15 +60,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Rol</label>
-                                    <asp:DropDownList runat="server" CssClass="form-control" ID="txtRolUser">
-                                        <asp:ListItem Value="-1">- Seleccionar -</asp:ListItem>
-                                        <asp:ListItem Value="1">Administrador</asp:ListItem>
-                                        <asp:ListItem Value="2">Medico</asp:ListItem>
-                                        <asp:ListItem Value="3">Asistente</asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:DropDownList runat="server" CssClass="form-control" ID="txtRolUser" AutoPostBack="false"></asp:DropDownList>
                                 </div>
                             </div>
 
+                            <div class="col-md-12">
+                                <br />
+                                <asp:Button runat="server" Width="100%" CssClass="btn btn-dark btn-sm ms-auto" ID="btnSaveUser" Text="Guardar" OnClick="btnSaveUser_Click" />
+                            </div>
 
                         </div>
                     </div>
@@ -75,4 +75,29 @@
             </div>
         </div>
     </div>
+    <%--Modal--%>
+    <div class="modal fade" id="staticbackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdroplabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabelBody"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showModalExito(mensaje, cuerpo) {
+
+            $("#staticbackdroplabel").text(mensaje);
+            $("#staticbackdroplabelBody").text(cuerpo);
+            $("#staticbackdrop").modal("show");
+        }
+    </script>
 </asp:Content>

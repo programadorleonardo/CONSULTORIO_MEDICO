@@ -16,35 +16,45 @@ namespace ConsultorioMedico
 
         protected void btnStartSession(object sender, EventArgs e)
         {
-            using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
+            try
             {
-                string query = "SELECT * FROM login WHERE usuario='" + txtUser.Text.ToLower().Trim() + "' AND idPublic='" + EncrypterPassword(txtPass.Text) + "';";
-                MySqlCommand cmd = new MySqlCommand(query,conexion);
-                conexion.Open();
-                MySqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedicoNube"].ConnectionString.ToString()))
                 {
-                    while (dr.Read())
+                    string query = "SELECT * FROM login WHERE usuario='" + txtUser.Text.ToLower().Trim() + "' AND idPublic='" + EncrypterPassword(txtPass.Text) + "';";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    conexion.Open();
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        Session["rolUsuario"] = dr["permissionType"].ToString();
-                        Session["nameUsuario"]= dr["usuario"].ToString().ToUpper();
+                        while (dr.Read())
+                        {
+                            Session["rolUsuario"] = dr["permissionType"].ToString();
+                            Session["nameUsuario"] = dr["usuario"].ToString().ToUpper();
+                        }
                     }
+
+
                 }
 
+                if (Session["nameUsuario"] == null)
+                {
+                    string script = "$(function() { showModalExito('Error','Usuario o contraseña incorrecta!'); }); ";
+                    ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
 
+                }
+                else
+                {
+
+                    Response.Redirect("Dashboard.aspx");
+                }
             }
-
-            if (Session["nameUsuario"] == null)
+            catch (Exception)
             {
-                lblMessageBox.Visible = true;
-                lblMessageBox.Text = "Usuario o contraseña equivocada";
 
+                string script = "$(function() { showModalExito('Error'); });";
+                ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
             }
-            else
-            {
 
-                Response.Redirect("Dashboard.aspx");
-            }
 
 
         }

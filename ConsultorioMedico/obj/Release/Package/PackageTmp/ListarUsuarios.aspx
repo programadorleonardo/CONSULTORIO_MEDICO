@@ -2,205 +2,74 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Usuarios</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-12">
-        <div class="card mb-4">
-
-            <div class="card-header pb-0">
+    <div class="card shadow-lg mx-0">
+        <div class="card-body p-3">
+            <div class="row gx-4">
                 <div class="col-12">
-                    <asp:TextBox runat="server" CssClass="form-control" ID="txtBuscarUsuario" placeholder="Buscar usuario..."></asp:TextBox>
+                    <div class="h-100">
+                        <asp:Button runat="server" Width="100%" CssClass="btn btn-dark" Text="Agregar un nuevo usuario" ID="btnAddUserSystem" OnClick="btnAddUserSystem_Click" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="h-100">
+                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Buscar usuario..."></asp:TextBox>
+                    </div>
                 </div>
             </div>
 
-
-
             <%--COMIEZA LA TABLA--%>
+            <br />
             <div class="card-body px-0 pt-0 pb-2">
                 <div class="table-responsive p-0">
-                    <table class="table align-items-center mb-0">
-                        <thead>
-                            <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre de usuario</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Funcion</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-                                <th class="text-secondary opacity-7"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-1 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Asistente" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">
-                                        <asp:Label runat="server" Text="Inline"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="OffLine"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-1 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Asistente" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">
-                                        <asp:Label runat="server" Text="Inline"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="OffLine"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-1 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Asistente" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">
-                                        <asp:Label runat="server" Text="Inline"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <asp:Label runat="server" CssClass="mb-0 text-sm" Text="Nombre completo" FontBold="True"></asp:Label>
-                                            <asp:Label runat="server" CssClass="text-xs text-secondary mb-0" Text="Nombre del usuario"></asp:Label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <asp:Label runat="server" CssClass="text-xs font-weight-bold mb-0" Text="Medico" FontBold="True"></asp:Label>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-danger">
-                                        <asp:Label runat="server" Text="OffLine"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Editar"></asp:Label>
-                                    </span>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="text-secondary text-xs font-weight-bold">
-                                        <asp:Label runat="server" Text="Eliminar"></asp:Label>
-                                    </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                        <ContentTemplate>
+                            <asp:GridView ID="GridViewDataUserSystem" runat="server" AutoGenerateColumns="False" CssClass="table align-items-center mb-0">
+                                <Columns>
+                                    <asp:HyperLinkField HeaderText="Usuario" DataNavigateUrlFields="idUserSystem" DataNavigateUrlFormatString="~/Usuario.aspx?id={0}" DataTextField="username" ItemStyle-CssClass="text-xs text-secondary mb-0" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" />
+                                    <asp:BoundField HeaderText="Usuario" DataField="username" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" Visible="false">
+                                        <HeaderStyle CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" />
+                                        <ItemStyle CssClass="text-xs text-secondary mb-0" />
+                                    </asp:BoundField>
+                                    <asp:BoundField HeaderText="Rol" DataField="permissionType" HeaderStyle-CssClass="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <HeaderStyle CssClass="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" />
+                                        <ItemStyle CssClass="text-center text-xs text-secondary mb-0" />
+                                    </asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+            <%--FIN DE LA TABLA--%>
+        </div>
+    </div>
+    <%--Modal--%>
+    <div class="modal fade" id="staticbackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdroplabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabelBody"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function showModalExito(mensaje, cuerpo) {
+
+            $("#staticbackdroplabel").text(mensaje);
+            $("#staticbackdroplabelBody").text(cuerpo);
+            $("#staticbackdrop").modal("show");
+        }
+    </script>
 </asp:Content>

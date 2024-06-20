@@ -13,26 +13,35 @@ namespace ConsultorioMedico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
+            try
             {
-                string query = "SELECT * FROM listUserSystem WHERE idUserSystem=" + id + "";
-                MySqlCommand cmd = new MySqlCommand(query, conexion);
-                conexion.Open();
-                MySqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedicoNube"].ConnectionString.ToString()))
                 {
-                    while (dr.Read())
+                    string query = "SELECT * FROM listusersystem WHERE idUserSystem=" + id + "";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    conexion.Open();
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        lblNombres.Text = dr["namesUser"].ToString().ToUpper();
-                        lblApellidos.Text = dr["lastNamesUser"].ToString().ToUpper();
-                        lblNameUser.Text = dr["username"].ToString().ToUpper();
-                        lblRol.Text = dr["permissionType"].ToString().ToUpper();
-                        lblEmail.Text = dr["emailUser"].ToString().ToUpper();
-                        lblTelefono.Text = dr["phoneUser"].ToString().ToUpper();
+                        while (dr.Read())
+                        {
+                            lblNombres.Text = dr["namesUser"].ToString().ToUpper();
+                            lblApellidos.Text = dr["lastNamesUser"].ToString().ToUpper();
+                            lblNameUser.Text = dr["username"].ToString().ToUpper();
+                            lblRol.Text = dr["permissionType"].ToString().ToUpper();
+                            lblEmail.Text = dr["emailUser"].ToString().ToUpper();
+                            lblTelefono.Text = dr["phoneUser"].ToString().ToUpper();
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                string script = "$(function() { showModalExito('Error!','" + ex + "')});";
+                ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
+            }
+
         }
     }
 }

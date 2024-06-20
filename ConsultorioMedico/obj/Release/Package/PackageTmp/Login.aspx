@@ -19,6 +19,7 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="">
@@ -33,24 +34,27 @@
                                     <h4 class="font-weight-bolder">Bienvenido!</h4>
                                     <p class="mb-0">Ingresa tu usuario y contraseña para iniciar sesion.</p>
                                 </div>
+                                <div class="card-header pb-0 text-start">
+                                    <asp:Label runat="server" ID="lblMessageBox" Text="" ForeColor="Red"></asp:Label>
+                                </div>
                                 <div class="card-body">
                                     <form runat="server" role="form">
                                         <div class="mb-3">
-                                            <asp:TextBox runat="server" ID="txtUser" TextMode="Email" CssClass="form-control form-control-lg" placeholder="Usuario"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtUser" TextMode="SingleLine" CssClass="form-control form-control-lg" placeholder="Usuario"></asp:TextBox>
                                         </div>
                                         <div class="mb-3">
                                             <asp:TextBox runat="server" ID="txtPass" TextMode="Password" CssClass="form-control form-control-lg" placeholder="Contraseña"></asp:TextBox>
                                         </div>
                                         <div class="text-center">
-                                            <asp:Button runat="server" CssClass="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0" Text="Iniciar sesion" OnClick="btnStartSession" />
+                                            <asp:Button runat="server" CssClass="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0" Text="Iniciar sesion" OnClick="btnStartSession" />
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-                            <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('pages/static/img/fondoLogin.jpg'); background-size: cover;">
-                                <span class="mask bg-gradient-primary opacity-6"></span>
+                            <div class="position-relative bg-gradient-dark h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('pages/static/img/fondoLogin.jpg'); background-size: cover;">
+                                <span class="mask bg-gradient-dark opacity-6"></span>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Cuida tu cuerpo, es el unico lugar sano para vivir."</h4>
                                 <p class="text-white position-relative">La salud es un estado de completa armonía del cuerpo, la mente y el espíritu. Cuando uno está libre de enfermedades físicas y distracciones mentales, las puertas del alma se abren.</p>
                             </div>
@@ -60,6 +64,32 @@
             </div>
         </section>
     </main>
+
+    <%--Modal--%>
+    <div class="modal fade" id="staticbackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticbackdroplabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="modal-title fs-5" id="staticbackdroplabelBody"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showModalExito(mensaje, cuerpo) {
+
+            $("#staticbackdroplabel").text(mensaje);
+            $("#staticbackdroplabelBody").text(cuerpo);
+            $("#staticbackdrop").modal("show");
+        }
+    </script>
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>

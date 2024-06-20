@@ -17,34 +17,43 @@ namespace ConsultorioMedico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[]{
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[]{
                 new DataColumn("idUserSystem",typeof(int)),
                 new DataColumn("username",typeof(string)),
                 new DataColumn("permissionType",typeof(string)),
                 });
-            string query = "SELECT * FROM listUserSystem";
-            using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedico"].ConnectionString.ToString()))
-            {
-                conexion.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conexion);
-                MySqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                string query = "SELECT * FROM listusersystem";
+                using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedicoNube"].ConnectionString.ToString()))
                 {
-                    while (dr.Read())
+                    conexion.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        dt.Rows.Add(
-                            Convert.ToInt32(dr["idUserSystem"]),
-                            dr["username"].ToString().ToUpper(),
-                            dr["permissionType"].ToString().ToUpper()
-                            );
+                        while (dr.Read())
+                        {
+                            dt.Rows.Add(
+                                Convert.ToInt32(dr["idUserSystem"]),
+                                dr["username"].ToString().ToUpper(),
+                                dr["permissionType"].ToString().ToUpper()
+                                );
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
                 }
+                GridViewDataUserSystem.DataSource = dt;
+                GridViewDataUserSystem.DataBind();
             }
-            GridViewDataUserSystem.DataSource = dt;
-            GridViewDataUserSystem.DataBind();
+            catch (Exception ex)
+            {
+                string script = "$(function() { showModalExito('Error','" + ex + "'); });";
+                ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
+            }
+
+
         }
 
         protected void btnAddUserSystem_Click(object sender, EventArgs e)
