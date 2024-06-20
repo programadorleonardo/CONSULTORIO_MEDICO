@@ -59,7 +59,7 @@ namespace ConsultorioMedico
 
         public List<string> GetPacientes()
         {
-            string query = "SELECT id,MAX(CASE WHEN tagGroup=16 AND tagElement=16 THEN value ELSE NULL END) AS Nombre,MAX(CASE WHEN tagGroup=16 AND tagElement=32 THEN value ELSE NULL END) AS Identificacion,MAX(CASE WHEN tagGroup=8 AND tagElement=32 THEN value ELSE NULL END) AS FechaEstudio,MAX(CASE WHEN tagGroup=8 AND tagElement=4144 THEN value ELSE NULL END) AS Estudio,MAX(CASE WHEN tagGroup=8 AND tagElement=33 THEN value ELSE NULL END) AS otraFechaEstudio,MAX(CASE WHEN tagGroup=8 AND tagElement=96 THEN value ELSE NULL END) AS tipoEstudio FROM maindicomtags GROUP BY id";
+            string query = "SELECT id,MAX(CASE WHEN tagGroup=8 AND tagElement=4144 THEN id ELSE NULL END) AS idPaciente,MAX(CASE WHEN tagGroup=16 AND tagElement=16 THEN value ELSE NULL END) AS Nombre,MAX(CASE WHEN tagGroup=16 AND tagElement=32 THEN value ELSE NULL END) AS Identificacion,MAX(CASE WHEN tagGroup=8 AND tagElement=32 THEN value ELSE NULL END) AS FechaEstudio,MAX(CASE WHEN tagGroup=8 AND tagElement=4144 THEN value ELSE NULL END) AS Estudio,MAX(CASE WHEN tagGroup=8 AND tagElement=33 THEN value ELSE NULL END) AS otraFechaEstudio,MAX(CASE WHEN tagGroup=8 AND tagElement=96 THEN value ELSE NULL END) AS tipoEstudio FROM maindicomtags GROUP BY id";
             List<string> data = new List<string>();
             using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["dispositivomedicodev"].ConnectionString.ToString()))
             {
@@ -75,7 +75,7 @@ namespace ConsultorioMedico
                     string tipoEstudio = "";
 
                     string fecha = "";
-                    //string id = "";
+                    string id = "";
                     string año = "";
                     string mes = "";
                     string dia = "";
@@ -87,6 +87,13 @@ namespace ConsultorioMedico
                             if (!data.Contains(dr["nombre"].ToString()))
                             {
                                 nombre = dr["nombre"].ToString().ToUpper();
+                            }
+                        }
+                        if (!System.String.IsNullOrEmpty(dr["idPaciente"].ToString()))
+                        {
+                            if (!data.Contains(dr["idPaciente"].ToString()))
+                            {
+                                id = dr["idPaciente"].ToString();
                             }
                         }
                         if (!System.String.IsNullOrEmpty(dr["identificacion"].ToString()))
@@ -134,9 +141,9 @@ namespace ConsultorioMedico
 
                             }
                         }
-                        if (!System.String.IsNullOrEmpty(nombre) && !System.String.IsNullOrEmpty(identificacion) && !System.String.IsNullOrEmpty(fechaEstudio) && !System.String.IsNullOrEmpty(nombreEstudio) && !System.String.IsNullOrEmpty(tipoEstudio))
+                        if (!System.String.IsNullOrEmpty(nombre) && !System.String.IsNullOrEmpty(identificacion) && !System.String.IsNullOrEmpty(fechaEstudio) && !System.String.IsNullOrEmpty(nombreEstudio) && !System.String.IsNullOrEmpty(tipoEstudio) && !System.String.IsNullOrEmpty(id))
                         {
-                            data.Add($"INSERT INTO patientstudy(namePatient,identification,dateStudy,nameStudy,typeStudy)VALUES('{nombre}','{identificacion}','{fechaEstudio}','{nombreEstudio}','{tipoEstudio}');");
+                            data.Add($"INSERT INTO patientstudy(namePatient,identification,dateStudy,nameStudy,typeStudy,idPatientDivice)VALUES('{nombre}','{identificacion}','{fechaEstudio}','{nombreEstudio}','{tipoEstudio}','{id}');");
                             nombre = "";
                             identificacion = "";
                             fechaEstudio = "";
