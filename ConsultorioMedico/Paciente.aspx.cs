@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace ConsultorioMedico
 {
@@ -188,6 +190,19 @@ namespace ConsultorioMedico
                 ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
             }
 
+        }
+
+        protected void btnOpenFilePatient_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abrir = new OpenFileDialog();
+            if (abrir.ShowDialog() == DialogResult.OK)
+            {
+                string direccion= abrir.FileName;
+                Process processInfo = new Process();
+                processInfo.StartInfo.FileName = direccion;
+                processInfo.Start();
+            }
+          
         }
     }
 }

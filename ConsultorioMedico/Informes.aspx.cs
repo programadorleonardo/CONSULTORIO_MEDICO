@@ -3,9 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Web;
-using IronPdf;
 using BitMiracle.Docotic.Pdf.HtmlToPdf;
-using System.Data.SqlTypes;
 using System.Threading.Tasks;
 
 namespace ConsultorioMedico
@@ -59,19 +57,19 @@ namespace ConsultorioMedico
 
         }
 
-        protected void btnDownloadPdf_Click(object sender, EventArgs e)
-        {
-            string urlActual = HttpContext.Current.Request.Url.AbsoluteUri;
-            convertUrlToPdfAsync(urlActual, "Informe.pdf");
+        //protected void btnDownloadPdf_Click(object sender, EventArgs e)
+        //{
+        //    string urlActual = HttpContext.Current.Request.Url.AbsoluteUri;
+        //    convertUrlToPdfAsync(urlActual, "Informe.pdf");
 
-        }
-        static async Task convertUrlToPdfAsync(string urlString, string pdfFileName)
-        {
-            using (var converter = await HtmlConverter.CreateAsync())
-            {
-                using (var pdf = await converter.CreatePdfAsync(new Uri(urlString)))
-                    pdf.Save(pdfFileName);
-            }
-        }
+        //}
+        //static async Task convertUrlToPdfAsync(string urlString, string pdfFileName)
+        //{
+        //    using (var converter = await HtmlConverter.CreateAsync())
+        //    {
+        //        using (var pdf = await converter.CreatePdfAsync(new Uri(urlString)))
+        //            pdf.Save(pdfFileName);
+        //    }
+        //}
     }
 }

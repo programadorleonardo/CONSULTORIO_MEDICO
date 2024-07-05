@@ -1,14 +1,8 @@
-﻿using Microsoft.SqlServer.Server;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Threading;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ConsultorioMedico
 {
@@ -143,7 +137,7 @@ namespace ConsultorioMedico
                         }
                         if (!System.String.IsNullOrEmpty(nombre) && !System.String.IsNullOrEmpty(identificacion) && !System.String.IsNullOrEmpty(fechaEstudio) && !System.String.IsNullOrEmpty(nombreEstudio) && !System.String.IsNullOrEmpty(tipoEstudio) && !System.String.IsNullOrEmpty(id))
                         {
-                            data.Add($"INSERT INTO patientstudy(namePatient,identification,dateStudy,nameStudy,typeStudy,idPatientDivice)VALUES('{nombre}','{identificacion}','{fechaEstudio}','{nombreEstudio}','{tipoEstudio}','{id}');");
+                            data.Add($"INSERT INTO patientstudy(namePatient,idPatient,identification,dateStudy,nameStudy,typeStudy)VALUES('{nombre}','{id}','{identificacion}','{fechaEstudio}','{nombreEstudio}','{tipoEstudio}');");
                             nombre = "";
                             identificacion = "";
                             fechaEstudio = "";
@@ -161,9 +155,9 @@ namespace ConsultorioMedico
             {
                 foreach (string query in data)
                 {
-                    try
-                    {
-                        using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedicoNube"].ConnectionString.ToString()))
+                try
+                {
+                    using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["consultoriomedicoNube"].ConnectionString.ToString()))
                         {
                             conexion.Open();
                             MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -175,7 +169,7 @@ namespace ConsultorioMedico
                         string scriptError = "$(function() { showModalExito('Error','" + ex + "'); }); ";
                         ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", scriptError, true);
                     }
-                   
+
                 }
                 string script = "$(function() { showModalExito('Error','Los datos se almacenaron correctamente'); }); ";
                 ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
@@ -185,7 +179,7 @@ namespace ConsultorioMedico
             catch (Exception ex)
             {
 
-                string script = "$(function() { showModalExito('Error','"+ex+"'); }); ";
+                string script = "$(function() { showModalExito('Error','" + ex + "'); }); ";
                 ClientScript.RegisterClientScriptBlock(GetType(), "Mensaje", script, true);
             }
 

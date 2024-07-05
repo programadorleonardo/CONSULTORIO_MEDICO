@@ -6,8 +6,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAActky7hrR30+Hvctt6uLJfgAAAAACAAAAAAAQZgAAAAEAACAAAADo2LWHYbBpRcCIsKfZ9AEUG0T6EPN+O/NXQBBlxDpcUQAAAAAOgAAAAAIAACAAAADegfY5+SvLU8/irSNS5pfegZPH9Fi5wKNkmLpHdA+k/TAAAAAy3TXnQvHxmjRmz4ncMjB3zqkKhfoFWxsduoCG6v3ghU0VZ5RAkpGuwoXzbedHgPVAAAAARNXqT5o67XwZ7Rf96Fhui7DycbNFGAOLREyhXL+9/dyWdts5OIwusw38XXBbsD3f3yZ580Z8SNaiI1Fby+SSuA==</EncryptedPassword>
-    <_PublishTargetUrl>ftp://consultoriomedico.somee.com/www.consultoriomedico.somee.com</_PublishTargetUrl>
-    <History>True|2024-06-19T17:36:17.6581765Z;True|2024-06-19T11:33:51.7404287-05:00;False|2024-06-19T11:22:06.1111590-05:00;False|2024-06-19T11:20:17.4161231-05:00;True|2024-06-02T21:25:34.3292968-05:00;True|2024-06-01T15:00:21.6618400-05:00;</History>
+    <_PublishTargetUrl>ftp://198.37.116.26/www.consultoriomedico.somee.com</_PublishTargetUrl>
+    <History>False|2024-07-05T14:41:23.4223596Z;False|2024-07-05T09:40:24.3223285-05:00;False|2024-07-05T09:38:50.1529063-05:00;False|2024-07-05T09:36:47.9155606-05:00;False|2024-07-05T09:33:08.0793916-05:00;False|2024-07-05T09:30:42.6168750-05:00;True|2024-06-19T12:36:17.6581765-05:00;True|2024-06-19T11:33:51.7404287-05:00;False|2024-06-19T11:22:06.1111590-05:00;False|2024-06-19T11:20:17.4161231-05:00;True|2024-06-02T21:25:34.3292968-05:00;True|2024-06-01T15:00:21.6618400-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -28,6 +28,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="assets/css/argon-dashboard.min.css">
       <publishTime>06/01/2024 13:28:40</publishTime>
+    </File>
+    <File Include="assets/css/Buscador.css">
+      <publishTime>06/19/2024 16:11:17</publishTime>
     </File>
     <File Include="assets/css/nucleo-icons.css">
       <publishTime>06/01/2024 13:28:40</publishTime>
@@ -349,6 +352,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="assets/js/plugins/bootstrap-notify.js">
       <publishTime>06/01/2024 13:28:41</publishTime>
+    </File>
+    <File Include="assets/js/plugins/Buscador.js">
+      <publishTime>06/19/2024 16:14:13</publishTime>
     </File>
     <File Include="assets/js/plugins/Chart.extension.js">
       <publishTime>06/01/2024 13:28:41</publishTime>
@@ -867,22 +873,88 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/01/2024 13:28:41</publishTime>
     </File>
     <File Include="Base.Master">
-      <publishTime>06/18/2024 21:39:12</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/BitMiracle.Docotic.Pdf.dll">
+      <publishTime>05/24/2024 01:27:26</publishTime>
+    </File>
+    <File Include="bin/BitMiracle.Docotic.Pdf.HtmlToPdf.dll">
+      <publishTime>05/24/2024 01:27:34</publishTime>
+    </File>
+    <File Include="bin/BitMiracle.LibTiff.NET.dll">
+      <publishTime>05/08/2021 07:42:12</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Cryptography.dll">
-      <publishTime>04/21/2023 07:07:22</publishTime>
+      <publishTime>05/27/2024 01:55:46</publishTime>
     </File>
     <File Include="bin/ConsultorioMedico.dll">
-      <publishTime>06/19/2024 13:06:34</publishTime>
+      <publishTime>07/05/2024 09:33:58</publishTime>
     </File>
     <File Include="bin/ConsultorioMedico.pdb">
-      <publishTime>06/19/2024 13:06:34</publishTime>
+      <publishTime>07/05/2024 09:33:58</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
       <publishTime>11/15/2023 06:29:56</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.pdb">
       <publishTime>11/15/2023 13:59:52</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.Api.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.Api.pdb">
+      <publishTime>03/29/2024 13:23:44</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.dll">
+      <publishTime>10/01/2023 19:19:06</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.pdb">
+      <publishTime>09/01/2023 17:21:18</publishTime>
+    </File>
+    <File Include="bin/Grpc.Net.Client.dll">
+      <publishTime>03/29/2024 14:32:04</publishTime>
+    </File>
+    <File Include="bin/Grpc.Net.Client.pdb">
+      <publishTime>03/29/2024 13:24:24</publishTime>
+    </File>
+    <File Include="bin/Grpc.Net.Common.dll">
+      <publishTime>03/29/2024 14:32:16</publishTime>
+    </File>
+    <File Include="bin/Grpc.Net.Common.pdb">
+      <publishTime>03/29/2024 13:24:08</publishTime>
+    </File>
+    <File Include="bin/grpc_csharp_ext.x64.dll">
+      <publishTime>10/01/2023 19:19:06</publishTime>
+    </File>
+    <File Include="bin/IronPdf.Extensions.ASPX.dll">
+      <publishTime>09/21/2023 21:19:02</publishTime>
+    </File>
+    <File Include="bin/IronPdf.Extensions.ASPX.pdb">
+      <publishTime>09/21/2023 21:19:02</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Abstractions.dll">
+      <publishTime>02/21/2024 01:41:24</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Abstractions.pdb">
+      <publishTime>02/21/2024 01:41:16</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Drawing.Common.dll">
+      <publishTime>05/20/2024 02:50:52</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Drawing.Common.pdb">
+      <publishTime>05/20/2024 02:50:46</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Logger.dll">
+      <publishTime>02/21/2024 01:41:26</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Logger.pdb">
+      <publishTime>02/21/2024 01:41:18</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Shared.dll">
+      <publishTime>02/21/2024 01:41:28</publishTime>
+    </File>
+    <File Include="bin/IronSoftware.Shared.pdb">
+      <publishTime>02/21/2024 01:41:20</publishTime>
     </File>
     <File Include="bin/K4os.Compression.LZ4.dll">
       <publishTime>01/06/2023 12:16:10</publishTime>
@@ -894,19 +966,52 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/08/2022 13:08:14</publishTime>
     </File>
     <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
-      <publishTime>10/19/2020 13:40:36</publishTime>
+      <publishTime>10/22/2021 18:42:08</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 09:10:50</publishTime>
     </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Abstractions.dll">
+      <publishTime>10/22/2021 18:47:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Binder.dll">
+      <publishTime>10/22/2021 18:47:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.dll">
+      <publishTime>10/22/2021 18:47:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.FileExtensions.dll">
+      <publishTime>10/22/2021 18:49:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Json.dll">
+      <publishTime>10/22/2021 18:49:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.UserSecrets.dll">
+      <publishTime>10/22/2021 18:49:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <publishTime>10/22/2021 18:47:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileProviders.Physical.dll">
+      <publishTime>10/22/2021 18:48:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileSystemGlobbing.dll">
+      <publishTime>10/22/2021 18:48:18</publishTime>
+    </File>
     <File Include="bin/Microsoft.Extensions.Logging.Abstractions.dll">
       <publishTime>05/24/2023 09:41:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>10/22/2021 18:47:28</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
       <publishTime>03/18/2024 02:35:52</publishTime>
     </File>
     <File Include="bin/MySqlConnector.dll">
       <publishTime>04/22/2024 02:28:44</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/17/2021 15:03:36</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/07/2018 22:38:48</publishTime>
@@ -1055,14 +1160,41 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>08/08/2018 05:18:16</publishTime>
     </File>
+    <File Include="bin/runtimes/linux-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="bin/runtimes/osx-arm64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="bin/runtimes/osx-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="bin/runtimes/win-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="bin/runtimes/win-x86/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="bin/SixLabors.Fonts.dll">
+      <publishTime>11/08/2023 07:04:56</publishTime>
+    </File>
+    <File Include="bin/SixLabors.ImageSharp.dll">
+      <publishTime>11/04/2024 01:27:12</publishTime>
+    </File>
+    <File Include="bin/SixLabors.ImageSharp.Drawing.dll">
+      <publishTime>08/14/2023 07:30:34</publishTime>
+    </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>02/19/2020 05:05:18</publishTime>
     </File>
     <File Include="bin/System.Configuration.ConfigurationManager.dll">
-      <publishTime>11/20/2017 13:09:04</publishTime>
+      <publishTime>10/22/2021 18:49:30</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>02/15/2023 19:55:30</publishTime>
+    </File>
+    <File Include="bin/System.Drawing.Common.dll">
+      <publishTime>10/22/2021 18:51:44</publishTime>
     </File>
     <File Include="bin/System.IO.Pipelines.dll">
       <publishTime>02/15/2022 12:10:38</publishTime>
@@ -1070,14 +1202,35 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/System.Memory.dll">
       <publishTime>05/07/2022 22:31:02</publishTime>
     </File>
+    <File Include="bin/System.Net.Http.WinHttpHandler.dll">
+      <publishTime>10/18/2022 11:27:34</publishTime>
+    </File>
     <File Include="bin/System.Numerics.Vectors.dll">
       <publishTime>05/15/2018 08:29:44</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
       <publishTime>10/22/2021 18:40:18</publishTime>
     </File>
+    <File Include="bin/System.Security.AccessControl.dll">
+      <publishTime>10/22/2021 18:45:08</publishTime>
+    </File>
+    <File Include="bin/System.Security.Permissions.dll">
+      <publishTime>10/22/2021 18:48:12</publishTime>
+    </File>
+    <File Include="bin/System.Security.Principal.Windows.dll">
+      <publishTime>10/19/2020 13:46:28</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/19/2020 13:46:44</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>10/22/2021 18:41:14</publishTime>
+    </File>
     <File Include="bin/System.Threading.Tasks.Extensions.dll">
       <publishTime>02/19/2020 05:05:18</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>05/15/2018 08:29:52</publishTime>
     </File>
     <File Include="bin/ZstdSharp.dll">
       <publishTime>04/06/2023 07:25:30</publishTime>
@@ -1094,38 +1247,50 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="docs/documentation.html">
       <publishTime>06/01/2024 13:28:41</publishTime>
     </File>
+    <File Include="grpc_csharp_ext.x64.dll">
+      <publishTime>10/01/2023 19:19:06</publishTime>
+    </File>
+    <File Include="grpc_csharp_ext.x86.dll">
+      <publishTime>10/01/2023 19:19:06</publishTime>
+    </File>
     <File Include="gulpfile.js">
       <publishTime>01/06/2024 13:28:41</publishTime>
     </File>
     <File Include="Informes.aspx">
-      <publishTime>06/18/2024 21:04:11</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ISSUE_TEMPLATE.md">
       <publishTime>06/01/2024 13:28:41</publishTime>
+    </File>
+    <File Include="libgrpc_csharp_ext.x64.dylib">
+      <publishTime>09/01/2023 17:20:26</publishTime>
+    </File>
+    <File Include="libgrpc_csharp_ext.x64.so">
+      <publishTime>09/01/2023 17:20:24</publishTime>
     </File>
     <File Include="LICENSE.md">
       <publishTime>06/01/2024 13:28:41</publishTime>
     </File>
     <File Include="ListarPacientes.aspx">
-      <publishTime>06/18/2024 12:35:12</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ListarUsuarios.aspx">
-      <publishTime>06/18/2024 21:11:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>06/19/2024 11:18:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Logout.aspx">
       <publishTime>06/03/2024 10:20:18</publishTime>
     </File>
     <File Include="NuevoPaciente.aspx">
-      <publishTime>06/13/2024 08:49:28</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="NuevoUsuario.aspx">
-      <publishTime>06/18/2024 21:13:07</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Paciente.aspx">
-      <publishTime>06/18/2024 21:38:35</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="package.json">
       <publishTime>06/01/2024 13:28:41</publishTime>
@@ -1151,14 +1316,29 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="README.md">
       <publishTime>06/01/2024 13:28:41</publishTime>
     </File>
+    <File Include="runtimes/linux-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="runtimes/osx-arm64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="runtimes/osx-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/Pdfium.Native.deployment.json">
+      <publishTime>05/24/2024 12:34:48</publishTime>
+    </File>
     <File Include="Usuario.aspx">
-      <publishTime>06/18/2024 21:23:09</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ViewPDF.aspx">
-      <publishTime>06/18/2024 21:27:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/19/2024 11:23:42</publishTime>
+      <publishTime>05/07/2024 09:26:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

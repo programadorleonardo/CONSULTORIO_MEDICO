@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Pacientes</title>
+    <link href="assets/css/Buscador.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/Buscador.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -16,7 +18,7 @@
                 </div>
                 <div class="col-12">
                     <div class="h-100">
-                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Buscar paciente..."></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtBuscadorPacientes" CssClass="form-control" placeholder="Buscar paciente..."></asp:TextBox>
                     </div>
                 </div>
             </div>

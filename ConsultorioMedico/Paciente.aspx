@@ -86,9 +86,17 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Observacion </label>
+                                    <asp:TextBox runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2" ID="txtObservations"></asp:TextBox>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     <label for="example-text-input" class="form-control-label"></label>
                                     <asp:Button ID="btnViewPDF" CssClass="form-control btn btn-dark" runat="server" Text="Ver PDF" PostBackUrl="~/ViewPDF.aspx"></asp:Button>
                                     <asp:Button ID="btnUpdateData" CssClass="form-control btn btn-success" runat="server" Text="Actualizar" OnClick="btnUpdateData_Click"></asp:Button>
+                                    <asp:Button ID="btnOpenFilePatient" CssClass="form-control btn-info" runat="server" Text="Open File" OnClick="btnOpenFilePatient_Click"></asp:Button>
                                 </div>
                             </div>
                         </div>

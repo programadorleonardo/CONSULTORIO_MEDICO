@@ -114,6 +114,15 @@ namespace ConsultorioMedico
         protected global::System.Web.UI.WebControls.FileUpload FileUploadPDF;
 
         /// <summary>
+        /// Control txtObservations.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObservations;
+
+        /// <summary>
         /// Control btnViewPDF.
         /// </summary>
         /// <remarks>
@@ -130,5 +139,14 @@ namespace ConsultorioMedico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdateData;
+
+        /// <summary>
+        /// Control btnOpenFilePatient.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOpenFilePatient;
     }
 }

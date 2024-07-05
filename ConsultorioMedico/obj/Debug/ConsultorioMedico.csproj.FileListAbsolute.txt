@@ -205,8 +205,6 @@ C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Gr
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Core.dll
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Net.Client.dll
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Net.Common.dll
-C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronPdf.dll
-C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronPdf.Extensions.ASPX.dll
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Abstractions.dll
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Drawing.Common.dll
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Logger.dll
@@ -242,9 +240,6 @@ C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Gr
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Net.Client.xml
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Net.Common.pdb
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\Grpc.Net.Common.xml
-C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronPdf.xml
-C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronPdf.Extensions.ASPX.pdb
-C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronPdf.Extensions.ASPX.xml
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Abstractions.pdb
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Drawing.Common.pdb
 C:\Users\LEONARDO BARONA\source\repos\ConsultorioMedico\ConsultorioMedico\bin\IronSoftware.Drawing.Common.xml

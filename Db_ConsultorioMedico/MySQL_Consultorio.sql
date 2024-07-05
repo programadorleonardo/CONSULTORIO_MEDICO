@@ -456,19 +456,22 @@ END$$
 /*============================================================================================*/
 /* 											 PATIENT STUDY									  */
 /*============================================================================================*/
+
 CREATE TABLE patientstudy (
 idPatientStudy INT NOT NULL AUTO_INCREMENT,
-namePatient VARCHAR(500),
-identification VARCHAR(45) NOT NULL,
+namePatient NVARCHAR(500),
+idPatient VARCHAR(50) UNIQUE,
+identification NVARCHAR(45) NOT NULL,
 dateStudy DATE NOT NULL,
-nameStudy VARCHAR(1000),
-typeStudy VARCHAR(45),
-rutePdfStudy VARCHAR(1000),
-operatorStudy VARCHAR(500),
+nameStudy NVARCHAR(1000),
+typeStudy NVARCHAR(45),
+rutePdfStudy NVARCHAR(1000),
+operatorStudy NVARCHAR(500),
 fkStateStudy INT,
 statePatientStudy TINYINT NULL DEFAULT 1,
+observations NVARCHAR(5000),
 PRIMARY KEY (idPatientStudy),
-INDEX idx_patiendStudy (dateStudy ASC, identification ASC,nameStudy ASC, typeStudy ASC, fkStateStudy ASC) VISIBLE,
+INDEX idx_patiendStudy (dateStudy ASC, identification ASC,idPatient ASC,nameStudy(50) ASC, typeStudy ASC, fkStateStudy ASC) VISIBLE,
 constraint Fk_StateStudy foreign key (fkStateStudy) references statepatientstudy(idStatePatientStudy)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
